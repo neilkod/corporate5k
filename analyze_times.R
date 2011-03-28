@@ -31,3 +31,11 @@ plot(density(cbsi_runners[cbsi_runners$gender=="Female",]$minutes),main="Female 
 # combined density plot
 m<-ggplot(cbsi_runners,aes(x=minutes))
 m+geom_density(aes(alpha=.65,fill=factor(gender))) + scale_x_continuous(limits =c(10,90)) + opts(title="Distribution of finishing times for CBSi 5k participants")
+
+
+ddply(theData,"team",function(dat) c(nrow(dat),median(dat$minutes),mean(dat$minutes),min(dat$minutes),max(dat$minutes)))
+
+
+# produce team summary
+team_summary <- ddply(theData,"team",function(dat) c(nrow(dat),nrow(dat[dat$gender=="Male",]),nrow(dat[dat$gender=="Female",]),median(dat$minutes),mean(dat$minutes),mean(dat[dat$gender=="Male",]$minutes),mean(dat[dat$gender=="Female",]$minutes),min(dat$minutes),max(dat$minutes)))
+names(team_summary) <- c('team','participants','male_participants','female_participants','median_time','average_time','average_male_time','average_female_time','minimum_time','maximum_time')
