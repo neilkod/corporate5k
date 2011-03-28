@@ -18,3 +18,5 @@ for line in sys.stdin:
 	 	secs = (int(time_components[0]) * 3600) + (int(time_components[1]) * 60) + int(time_components[2])
 	print "\t".join([name.lower(),gender,secs,team.lower(),float(secs)/60,time])
 
+
+
