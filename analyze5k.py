@@ -1,6 +1,10 @@
 #!/bin/python
 import sys
 
+# purpose of the code is to take the input data and convert the 
+# duration string into a continuous numerical feature.
+# output the duration as minutes and everything else, in tab-separated
+# format.
 
 for line in sys.stdin:
 	data = line.strip()
@@ -12,4 +16,5 @@ for line in sys.stdin:
 		secs = (int(time_components[0]) * 60) + int(time_components[1])
 	elif len(time_components) == 3:
 	 	secs = (int(time_components[0]) * 3600) + (int(time_components[1]) * 60) + int(time_components[2])
-	print "%s\t%s\t%s\t%s\t%.2f\t%s" % (name.lower(),gender,secs,team.lower(),float(secs)/60,time)
+	print "\t".join([name.lower(),gender,secs,team.lower(),float(secs)/60,time])
+
