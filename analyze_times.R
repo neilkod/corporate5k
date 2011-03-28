@@ -1,4 +1,4 @@
-theData <- read.csv('~/Dropbox/development/R/corporate5k/all_times.csv',header=FALSE,sep='\t',stringsAsFactors=FALSE)
+theData <- read.csv('~/Dropbox/development/R/corporate5k/data/all_times.tsv',header=FALSE,sep='\t',stringsAsFactors=FALSE)
 names(theData) <- c('name','gender','seconds','team','minutes','time')
 
 # subset of all runners from CBSi
