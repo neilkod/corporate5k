@@ -1,1 +1,4 @@
 analysis of corporate 5k times
+the python code analyze5k.py transforms the raw webpage data into a more useful format.
+analyze_times.R analyzes the transformed data and produces a few summary statistics
+and visuals.
